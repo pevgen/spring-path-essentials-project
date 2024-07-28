@@ -1,13 +1,13 @@
-// TO-DO-01 : Add the Spring Boot Plugin
+// Spring Boot plugin will generate the runtime deployment artifact for you
+// through the repackage goal for Maven and the bootJar task for Gradle.
+// The repackage goal is run as part of the Maven package goal and the bootJar task is
+// run as part of Gradle assemble task
+apply plugin: "org.springframework.boot"
 
 
 dependencies {
     implementation project(':00-rewards-common')
-
-    // TO-DO-02 : Refactor from discrete Spring Framework
-    // dependency to JDBC Boot Starter
-    implementation 'org.springframework:spring-jdbc'
-    
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 }
 
 // Create original jar file with "gradlew assemble"
